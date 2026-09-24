@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlos Martín · Páginas web y apps</title>
+<meta name="description" content="Páginas web y aplicaciones sencillas para negocios, consultorios y colegios. Entrega rápida, precio fijo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#2563eb;--accent-fg:#fff}
+  @media (prefers-color-scheme:dark){:root{--bg:#0c0a09;--fg:#f5f5f4;--muted:#a8a29e;--card:#1c1917;--line:#292524;--accent:#60a5fa;--accent-fg:#0c0a09}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header{padding:20px 0;border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .logo{font-weight:800;font-size:1.1rem}
+  nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.95rem}
+  nav a:hover{color:var(--fg)}
+  .hero{padding:80px 0 60px}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;font-weight:800;max-width:760px}
+  .hero p{color:var(--muted);font-size:1.15rem;margin:18px 0 28px;max-width:620px}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-fg);padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none}
+  .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line);margin-left:8px}
+  section{padding:56px 0}
+  h2{font-size:1.7rem;margin-bottom:24px}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .card h3{margin-bottom:6px}
+  .price{font-size:1.4rem;font-weight:800;margin:10px 0}
+  .card ul{padding-left:18px;color:var(--muted);font-size:.95rem}
+  .demo{text-decoration:none;color:inherit;display:block;transition:transform .15s}
+  .demo:hover{transform:translateY(-3px)}
+  .thumb{height:140px;border-radius:10px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;font-size:2.4rem}
+  .t1{background:linear-gradient(135deg,#1e3a8a,#3b82f6)}
+  .t2{background:linear-gradient(135deg,#065f46,#34d399)}
+  .muted{color:var(--muted)}
+  .steps{counter-reset:s;list-style:none}
+  .steps li{counter-increment:s;padding:14px 0 14px 52px;position:relative;border-bottom:1px solid var(--line)}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:flex;align-items:center;justify-content:center;font-weight:700}
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  @media (max-width:560px){nav{display:none}.btn.ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="logo">Carlos Martín</div>
+  <nav><a href="#servicios">Servicios</a><a href="#trabajos">Trabajos</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Tu negocio en internet, listo en días y a precio fijo.</h1>
+    <p>Soy arquitecto de software con experiencia en sistemas de pagos a gran escala. Hago páginas web y aplicaciones sencillas para negocios locales, consultorios y colegios.</p>
+    <a class="btn" href="mailto:cjmar87@gmail.com?subject=Me%20interesa%20una%20p%C3%A1gina%20web">Escríbeme</a>
+    <a class="btn ghost" href="#trabajos">Ver ejemplos</a>
+  </div>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card"><h3>Landing básica</h3><div class="price">desde $3,500</div>
+        <ul><li>Una página adaptable a celular</li><li>Botón de WhatsApp y mapa</li><li>Formulario de contacto</li><li>Dominio el primer año</li></ul></div>
+      <div class="card"><h3>Sitio de negocio</h3><div class="price">desde $8,000</div>
+        <ul><li>Hasta 5 secciones</li><li>Galería y servicios</li><li>Alta en Google Maps</li><li>SEO básico y analítica</li></ul></div>
+      <div class="card"><h3>App web sencilla</h3><div class="price">a cotizar</div>
+        <ul><li>Citas, pedidos o inventario</li><li>Panel de administración</li><li>Acceso con usuario</li><li>Hecha a tu medida</li></ul></div>
+    </div>
+    <p class="muted" style="margin-top:16px">Mantenimiento mensual opcional: hosting, respaldos y cambios menores.</p>
+  </section>
+
+  <section id="trabajos">
+    <h2>Ejemplos</h2>
+    <div class="grid">
+      <a class="card demo" href="demos/escuela/"><div class="thumb t1">🏫</div><h3>Colegio</h3><p class="muted">Inscripciones, avisos para padres y calendario escolar.</p></a>
+      <a class="card demo" href="demos/consultorio/"><div class="thumb t2">🩺</div><h3>Consultorio</h3><p class="muted">Servicios, horarios y citas por WhatsApp.</p></a>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <h2>Cómo trabajo</h2>
+    <ol class="steps">
+      <li><strong>Platicamos</strong> <span class="muted">· 15 minutos para entender tu negocio.</span></li>
+      <li><strong>Propuesta con precio fijo</strong> <span class="muted">· sin sorpresas.</span></li>
+      <li><strong>Anticipo del 50% y arranco</strong> <span class="muted">· te muestro avances.</span></li>
+      <li><strong>Entrega y ajustes</strong> <span class="muted">· el dominio queda a tu nombre.</span></li>
+    </ol>
+  </section>
+
+  <section id="contacto">
+    <h2>¿Platicamos?</h2>
+    <p class="muted" style="margin-bottom:20px">Cuéntame qué necesitas y te respondo el mismo día.</p>
+    <a class="btn" href="mailto:cjmar87@gmail.com?subject=Me%20interesa%20una%20p%C3%A1gina%20web">Correo</a>
+    <a class="btn ghost" href="https://github.com/charlymrtn" target="_blank" rel="noopener">GitHub</a>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Carlos Martín · Desarrollo web · <a href="mailto:cjmar87@gmail.com" style="color:inherit">cjmar87@gmail.com</a> · <a href="https://github.com/charlymrtn" style="color:inherit">github.com/charlymrtn</a></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
