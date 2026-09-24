@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colegio Monte Azul · Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f8fafc;--fg:#0f172a;--muted:#475569;--card:#fff;--line:#e2e8f0;--pri:#1e3a8a;--pri2:#3b82f6;--warn:#f59e0b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .demo-bar{background:#111;color:#fff;text-align:center;font-size:.85rem;padding:6px}
+  .demo-bar a{color:#93c5fd}
+  header{background:var(--pri);color:#fff;padding:16px 0}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-weight:800;font-size:1.2rem}
+  header nav a{color:#dbeafe;text-decoration:none;margin-left:16px}
+  .hero{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;padding:70px 0}
+  .hero h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;line-height:1.2}
+  .hero p{opacity:.9;margin:14px 0 24px;max-width:560px}
+  .btn{display:inline-block;background:#fff;color:var(--pri);padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none}
+  section{padding:50px 0}
+  h2{font-size:1.6rem;margin-bottom:20px;color:var(--pri)}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .aviso{border-left:4px solid var(--pri2)}
+  .aviso.urgente{border-left-color:var(--warn)}
+  .tag{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:99px;background:#dbeafe;color:var(--pri);margin-bottom:6px}
+  .urgente .tag{background:#fef3c7;color:#92400e}
+  .fecha{color:var(--muted);font-size:.85rem}
+  .filtros button{border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:99px;margin:0 6px 14px 0;cursor:pointer;font:inherit}
+  .filtros button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  td,th{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left}
+  th{background:#eff6ff;color:var(--pri)}
+  .niveles .card h3{color:var(--pri)}
+  footer{background:var(--fg);color:#cbd5e1;padding:36px 0;font-size:.9rem}
+  footer .grid{gap:24px}
+  @media (max-width:600px){header nav{display:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo de ejemplo · <a href="../../">volver al portafolio</a></div>
+<header><div class="wrap"><div class="brand">🏫 Colegio Monte Azul</div>
+<nav><a href="#avisos">Avisos</a><a href="#calendario">Calendario</a><a href="#niveles">Niveles</a><a href="#contacto">Contacto</a></nav></div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Formamos niños felices, curiosos y responsables.</h1>
+  <p>Preescolar y primaria con grupos reducidos, inglés diario y actividades deportivas. Inscripciones abiertas para el ciclo 2027–2028.</p>
+  <a class="btn" href="#contacto">Agenda una visita</a>
+</div></div>
+
+<main class="wrap">
+  <section id="avisos">
+    <h2>Avisos para padres</h2>
+    <div class="filtros" id="filtros"></div>
+    <div class="grid" id="lista-avisos"></div>
+  </section>
+
+  <section id="calendario">
+    <h2>Próximas fechas</h2>
+    <table><thead><tr><th>Fecha</th><th>Evento</th><th>Nivel</th></tr></thead><tbody id="tabla-cal"></tbody></table>
+  </section>
+
+  <section id="niveles" class="niveles">
+    <h2>Niveles educativos</h2>
+    <div class="grid">
+      <div class="card"><h3>Preescolar</h3><p>1°, 2° y 3°. Estimulación temprana, música y juego guiado.</p></div>
+      <div class="card"><h3>Primaria</h3><p>1° a 6°. Inglés diario, robótica y club de lectura.</p></div>
+      <div class="card"><h3>Horario extendido</h3><p>Hasta las 17:00 h con comida y apoyo en tareas.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto"><div class="wrap grid">
+  <div><strong>Colegio Monte Azul</strong><br>Av. Ejemplo 123, Col. Centro<br>Lun–Vie 7:30–15:00</div>
+  <div>Tel. 55 0000 0000<br>contacto@colegio-ejemplo.mx</div>
+  <div>Datos ficticios con fines de demostración.</div>
+</div></footer>
+
+<script>
+const avisos=[
+  {t:"Suspensión de clases",d:"No habrá clases el viernes por junta de Consejo Técnico.",f:"2026-09-25",n:"General",u:true},
+  {t:"Festival de otoño",d:"Invitamos a las familias a la kermés. Habrá juegos y venta de antojitos.",f:"2026-10-17",n:"General"},
+  {t:"Entrega de boletas",d:"Reunión con padres para entrega de calificaciones del primer periodo.",f:"2026-10-30",n:"Primaria"},
+  {t:"Vacunación",d:"Campaña de vacunación en el plantel. Traer cartilla.",f:"2026-10-08",n:"Preescolar",u:true},
+  {t:"Uniforme deportivo",d:"A partir de octubre, los martes y jueves se usa uniforme deportivo.",f:"2026-10-01",n:"Primaria"}
+];
+const eventos=[
+  ["2026-09-25","Consejo Técnico, sin clases","General"],
+  ["2026-10-08","Campaña de vacunación","Preescolar"],
+  ["2026-10-17","Festival de otoño","General"],
+  ["2026-10-30","Entrega de boletas","Primaria"],
+  ["2026-11-02","Día de Muertos, sin clases","General"],
+  ["2026-11-16","Revolución Mexicana, sin clases","General"]
+];
+const fmt=s=>new Date(s+"T12:00").toLocaleDateString("es-MX",{weekday:"short",day:"numeric",month:"long"});
+const niveles=["Todos","General","Preescolar","Primaria"];let sel="Todos";
+function render(){
+  document.getElementById("filtros").innerHTML=niveles.map(n=>`<button class="${n===sel?'on':''}" data-n="${n}">${n}</button>`).join("");
+  document.getElementById("lista-avisos").innerHTML=avisos
+    .filter(a=>sel==="Todos"||a.n===sel||a.n==="General")
+    .sort((a,b)=>a.f.localeCompare(b.f))
+    .map(a=>`<div class="card aviso ${a.u?'urgente':''}"><span class="tag">${a.u?'Importante':a.n}</span><h3>${a.t}</h3><p>${a.d}</p><div class="fecha">${fmt(a.f)}</div></div>`).join("");
+}
+document.getElementById("filtros").addEventListener("click",e=>{if(e.target.dataset.n){sel=e.target.dataset.n;render()}});
+document.getElementById("tabla-cal").innerHTML=eventos.map(([f,e,n])=>`<tr><td>${fmt(f)}</td><td>${e}</td><td>${n}</td></tr>`).join("");
+render();
+</script>
+</body>
+</html>
